@@ -1,1 +1,1 @@
-searchbyakiss.github.io/im-2310:a1/boilerplate/index.html
+searchbyakiss.github.io/IM-A2/index.html
