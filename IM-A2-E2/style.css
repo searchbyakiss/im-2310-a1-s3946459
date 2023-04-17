@@ -1,0 +1,106 @@
+/* z-index order */
+
+*{
+  box-sizing: border-box;
+  background-origin: border-box;
+  margin: 0;
+}
+
+:root{
+  --col-01:rgb(235, 213, 255);
+  --col-02:#000451;
+  --col-03:#ffffff;
+  --col-04:#fdcaff;
+  --border: 1px solid var(--col-02);
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--col-01);
+  color: var(--col-02);
+  padding: 2vw;
+}
+
+.AuthorBox{
+  display: flex;
+  flex-direction: column;
+  border: var(--border);
+}
+
+.FilterSection{
+
+}
+
+.FilterBox{
+
+}
+
+.FilterButton{
+
+}
+
+.SelectedFilter{
+  
+}
+
+.AnimeLink{
+
+}
+
+.AnimeName{
+
+}
+
+.Author{
+
+}
+
+.AnimeImageContainer{
+
+}
+
+.AnimeImg{
+
+}
+
+.RegionOfProdution{
+
+}
+
+.Publisher{
+
+}
+
+.RuningTime{
+
+}
+
+.ReleaseDate{
+
+}
+
+.Introduction{
+
+}
+
+.Character{
+
+}
+
+.Reviews{
+
+}
+
+.FristEpDate{
+
+}
+
+.FinalEpDate{
+
+}
+
+.Episodes{
+
+}
+

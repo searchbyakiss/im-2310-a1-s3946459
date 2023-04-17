@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="./filter.js" defer></script>
+    <!-- <script src="./arrays-&-for-loops.js" defer></script> -->
+
+    <title>IM-A2-E2</title>
+
+  </head>
+
+  <body>
+
+    <div>Interactive Media 1 Anime Author List</div>
+
+    <hr /> 
+
+    <div class="FilterSection">     
+
+      <details class="FilterBox">
+        <summary>Author</summary>
+        <button class="FilterButton" onclick='filterCategory("JI", this)'>Junji Ito</button>
+        <button class="FilterButton" onclick='filterCategory("MS", this)'>Makoto Shinkai</button>
+        <button class="FilterButton" onclick='filterCategory("HM", this)'>Hayao Miyazaki</button>
+        <button class="FilterButton" onclick='filterCategory("OT", this)'>Osamu Tezuka</button>
+      </details>
+
+    </div>
+
+    <hr /> 
+
+    <!-- Author Anime 1 -->
+    <div class="AuthorBox JI">
+
+      <!-- don't forget to change out <div>s for the most appropriate element -->
+      <!-- i'll give you one for free - you should change the URL into an <a> tag, don't forget to add the appropriate attributes so it works as a link -->
+      <div class="AnimeLink">URL: https://crunchyroll.com/watch/GX9UQP928?utm_medium=ios&utm_source=share</div>
+
+      <div class="AnimeName"><h4>Anime Name:</h4> Tomie </div>
+
+      <div class="Author"><h4>Author: </h4>Junji Ito</div>
+      
+      <!-- the AnimeImageContainer is actually fine to be left as a <div> - like the AnimeBox we're using it as a container for other elements -->
+      <div class="AnimeImageContainer">
+
+        <img class="AnimeImg" src="./images/Tomie.jpg" alt="Tomie" />
+
+      </div>
+
+      <div class="Publisher"><h4>Publisher:</h4> Asahi Sonorama</div>
+
+      <div class="RegionOfProduction"><h4>Region of production:</h4>Japan</div>
+
+      <div class="RunningTime"><h4>Running time:</h4>95 minutes </div>
+
+      <div class="ReleaseDate"><h4>Release Date: </h4>October 6, 1998</div>
+
+      <div class="Introduction"><h4>Introduction:</h4> The Tomie series was first created by Japanese horror manga master Junji Ito, and was also Ito's debut work.
+        First serialised in 1988, the manga has become a classic of today's horror manga with its violent, gory and fantastically imaginative storytelling and drawing style, with Tomie, the heroine, being the classic of all.</div>
+
+      <div class="Character"><h4>Character: </h4>Kawakami Tomie is a very beautiful woman, but she is also vain, arrogant and unpredictable. Tomie's identity is mysterious. She can reproduce endlessly from the cells of her body and has the ability to multiply indefinitely like a piece of leech.</div>
+
+      <div class="Reviews"><h4>Reviews:</h4>The reason why this series of manga is so highly regarded as a masterpiece by Junji Ito and a classic of horror manga is that it does more than just be scary and unpleasant for the reader. First of all, Tomie, as the heroine, is beautiful and frivolous, seducing all men with impunity, which is indeed detestable as a woman; but at the same time, she has to suffer the pain of death and then be reborn after being abused and dismembered by different men over and over again. ...... This makes the reader somewhat sympathetic to her. The fact that she has a little sympathy for her, and at the same time understands in her heart that not being a good person will not be rewarded, and even if she can stay alive she can only exist in such a monstrous way, is more or less a warning.
+        Then look at the many protagonists in this series. There are men and women, young people and old people and children. It can be said that different people display different flaws in human nature. Most of the men who adore Tomie die in vain, and the rest go mad. In fact, there are women like Tomie in real life, just not as exaggerated, but the ones who end up suffering the most are themselves. Young girls who envy Tomie's beauty and try to become her will find that their true character is more appealing when they become beautiful.</div>
+
+
+    </div>
+    
+    <!-- Author Anime 2 -->
+    <div class="AuthorBox MS">
+
+      <div class="AnimeLink">URL: https://tv.apple.com/au/movie/5-centimetres-per-second/umc.cmc.5vzmu3bq6xmqslk2q0ui34xs2</div>
+
+      <div class="AnimeName"><h4>Anime Name: </h4>5 centimetres per second</div>
+
+      <div class="Author"><h4>Author: </h4>Makoto Shinkai</div>
+
+      <div class="AnimeImageContainer">
+
+        <img class="AnimeImg" src="./images/5c.jpg" alt="5 cm per second" />
+
+      </div>
+
+      <div class="Publisher"><h4>Publisher:</h4> CoMix Wave Films</div>
+
+      <div class="RegionOfProduction"><h4>Region of production:</h4>Japan</div>
+
+      <div class="RunningTime"><h4>Running time:</h4>63 minutes </div>
+
+      <div class="ReleaseDate"><h4>Release Date: </h4>March 3, 2007 (Japan)</div>
+
+      <div class="Introduction"><h4>Introduction:</h4> 5cm per Second is a realistic animated film by Makoto Shinkai. It is a series of three short anime stories about a young boy, set in Japan from the 1990s to the present day, showing the changes in Tokyo and beyond through the life of the boy.</div>
+
+      <div class="Character"><h4>Character: </h4>Takashi Tono 
+        <br>Akari Shinohara
+        <br>Hanae Sumida</div>
+
+      <div class="Reviews"><h4>Reviews:</h4>5cm per Second is a durable animated film. The most striking aspect of the film's form is its depiction of detail: the realism of light and shadow, the reflection of tree branches in standing water, the ripples caused by flower petals falling on the water; the graphic sound, the quiet and ethereal soundtrack; the slow switching of images with the implicit words of the letter, the right sense of rhythm.</div>
+
+
+    </div>
+    
+    <!-- Author Anime 3 -->
+    <div class="AuthorBox HM">
+
+      <div class="AnimeLink">URL:https://www.netflix.com/au/title/60023642</div>
+
+      <div class="AnimeName"><h4>Anime Name:</h4> Spirited Away</div>
+
+      <div class="Author"><h4>Author:</h4> Hayao Miyazaki</div>
+
+      <div class="AnimeImageContainer">
+
+        <img class="AnimeImg" src="./images/千与千寻.jpg" alt="千与千寻" />
+
+      </div>
+
+      <div class="Publisher"><h4>Publisher:</h4> Studio Ghibli</div>
+
+      <div class="RegionOfProduction"><h4>Region of production:</h4>Japan</div>
+
+      <div class="RunningTime"><h4>Running time:</h4>125 minutes </div>
+
+      <div class="ReleaseDate"><h4>Release Date: </h4>July 20, 2001 (Japan)</div>
+
+      <div class="Introduction"><h4>Introduction:</h4> The story of a 10-year-old girl, Chihiro Ogiano, and her family, who mistakenly enter the world of the spirits, then grow up and find a way to return to the world of humans for herself and her parents.</div>
+
+      <div class="Character"><h4>Character: </h4>Chihiro Ogiano / sen :
+        The central character of this film is a 10-year-old fourth-grade girl with a disinterested and unmotivated personality.
+        <br>The White Dragon (Haku):
+        He was originally the god of a river called the "Amber River" (コハク川), and his original form was that of a dragon and he could change his appearance to that of a 12-year-old boy.</div>
+
+      <div class="Reviews"><h4>Reviews:</h4> Through the story of Chihiro, the film tells the growth process of facing the society alone in an in-depth and simple way. It is a "growth gift" given by Hayao Miyazaki to audiences of all ages. At the time of the college entrance examination, for candidates who are about to step into the society, "Qian and Qianxun" is also an excellent "coming-of-age ceremony". In the first stage of growth, everyone will experience the panic of entering a strange environment, just like the panic of Qianxun entering the hidden world for the first time. In the second stage, people will encounter temptations and make choices. Just like in the soup house, some people sink into monsters like a faceless man, and some people have always sticking to their original heart like Chihiro. The third stage is an unavoidable parting in growing up, just like the life train in the film. Everyone can only accompany you for a while, and you can only wave goodbye when someone gets out of the car.</div>
+      
+      </div>
+    
+    <!-- Author Anime 4 -->
+    <div class="AuthorBox OT">
+
+      <div class="AnimeLink">URL: https://youtu.be/f1zgUhAtqM4</div>
+
+      <div class="AnimeName"><h4>AnimeName:</h4>Astro Boy</div>
+
+      <div class="Author"><h4>Author:</h4>Osamu Tezuka</div>
+
+      <div class="AnimeImageContainer">
+
+        <img class="AnimeImg" src="./images/铁臂.jpg" alt="铁臂" />
+
+      </div>
+
+      <div class="Publisher"><h4>Publisher:</h4> Animax, Fuji TV</div>
+
+      <div class="RegionOfProduction"><h4>Region of production:</h4>Japan</div>
+
+      <div class="FirstEpDate"><h4>First episode date: </h4>6 April 2003</div>
+
+      <div class="FinalEpDate"><h4>Final episode date:</h4>28 March 2004</div>
+
+      <div class="Introduction"><h4>Introduction:</h4> Iron Arm Astro Boy" is a science fiction manga created by Japanese manga artist Osamu Tezuka, which was serialized in "Kou Bunsha"'s "Shonen" manga magazine from 1952 to 1968. The work tells the story of Astro Boy, a young robot in the future 21st century.</div>
+
+      <div class="Character"><h4>Character:</h4> Arm Astro Boy" is a science fiction manga created by Japanese manga artist Osamu Tezuka, which was serialized in "Kou Bunsha"'s "Shonen" manga magazine from 1952 to 1968. The work tells the story of Astro Boy, a young robot in the future 21st century.</div>
+      
+
+    </div>
+    
+    <!-- Author Anime 5 -->
+    <div class="AuthorBox HM">
+
+      <div class="AnimeLink">URL: https://www.netflix.com/au/title/70293674</div>
+
+      <div class="AnimeName"><h4>Anime Name: </h4>The Wind Rises</div>
+
+      <div class="Author"><h4>Author:</h4>Hayao Miyazaki</div>
+
+      <div class="AnimeImageContainer">
+
+        <img class="AnimeImg" src="./images/起风了.jpg" alt="起风了" />
+
+      </div>
+
+      <div class="Publisher"><h4>Publisher:</h4>Studio Ghibli</div>
+
+      <div class="RegionOfProduction"><h4>Region of production:</h4>Japan</div>
+
+      <div class="RunningTime"><h4>Running time:</h4> 2h 6m </div>
+
+      <div class="ReleaseDate"><h4>Release Date: </h4>July 20, 2013 (Japan)</div>
+
+      <div class="Introduction"><h4>Introduction:</h4> The film is set in Japan in the 1920s. It tells the story of the young life of a technician in Japan's "father of aviation" Jiro Horikoshi, and his encounter with the young girl Nahoko.</div>
+      
+      </div>
+    
+    
+    <!-- Author AniOTe 6 -->
+    <div class="AuthorBox JI">
+
+      <div class="AnimeLink">URL:https://www.netflix.com/au/title/81295011?source=35</div>
+
+      <div class="AnimeName"><h4>Anime Name:</h4> Junji Ito Maniac: Japanese Tales of the Macabre</div>
+
+      <div class="Author"><h4>Author: </h4>Junji Ito</div>
+
+      <div class="AnimeImageContainer">
+
+        <img class="AnimeImg" src="./images/狂热.jpg" alt="狂热" />
+
+      </div>
+
+      <div class="Publisher"><h4>Publisher:</h4> Studio Deen</div>
+
+      <div class="RegionOfProduction"><h4>Region of production:</h4>Japan</div>
+
+      <div class="RunningTime"><h4>Running time:</h4>24-25 minutes </div>
+
+      <div class="ReleaseDate"><h4>Release Date: </h4>19 January 2023(Japan)</div>
+
+      <div class="Introduction"><h4>Introduction:</h4> Featuring a selection of 20 macabre masterpieces brimming with Ito's original worldview and fascinating characters drawn in his stunning style.</div>
+
+      
+      </div>
+    
+    
+    <!-- Author Anime 7 -->
+    <div class="AuthorBox MS">
+
+      <div class="AnimeLink">URL: https://crunchyroll.com/series/G9VHN9PK3?utm_medium=ios&utm_source=share</div>
+
+      <div class="AnimeName">Anime Name:Your Name</div>
+
+      <div class="Author">Author: Makoto Shinkai</div>
+
+      <div class="AnimeImageContainer">
+
+        <img class="AnimeImg" src="./images/你的名字.jpg" alt="your name" />
+
+
+      </div>
+
+      <div class="Publisher"><h4>Publisher:</h4> Toho Corporation</div>
+
+      <div class="RegionOfProduction"><h4>Region of production:</h4>Japan</div>
+
+      <div class="RunningTime"><h4>Running time:</h4>1h 52m </div>
+
+      <div class="ReleaseDate"><h4>Release Date: </h4>24 November 2016 (Australia)</div>
+
+      <div class="Introduction"><h4>Introduction:</h4> The film tells the story of male and female high school students who meet in their dreams and look for each other.</div>
+
+      <div class="Character"><h4>Character: </h4> Tachibana Taki: 
+        A male high school student living in the centre of Tokyo. I live happily with my friends every day and work in an Italian restaurant. I have a good impression on my colleague, the senior of Ao Temple. I am very interested in architecture and art.
+        
+        <br>Miyamizu Mitsuha:
+        
+        A female high school student who lives in Itomori Town, a small town in the deep mountains. As the mayor of Itomori, his father left home and lived with his younger sister and grandmother, who were still a primary school student. He is straightforward and disgusted with the customs of the family shrine and his father's election activities. I sighed with my friends at this narrow town and looked forward to the gorgeous life in Tokyo.</div>
+      
+      </div>
+    
+    
+    <!-- Author Anime 8 -->
+    <div class="AuthorBox OT">
+
+      <div class="AnimeLink">URL: https://www.primevideo.com/detail/Young-Black-Jack/0OB9D5D1NPFVQMT4A95E60T1GW#:~:text=Prime%20Video%3A%20Young%20Black%20Jack</div>
+
+      <div class="AnimeName"><h4>Anime Name: </h4> Black Jack</div>
+
+      <div class="Author"><h4>Author:</h4> Osamu Tezuka/div>
+
+      <div class="AnimeImageContainer">
+
+        <img class="AnimeImg" src="./images/怪医.jpg" alt="kimchi pancake with bowl of dipping sauce" />
+
+      </div>
+
+      <div class="Publisher"><h4>Publisher:</h4> 周刊少年Champion</div>
+
+      <div class="RegionOfProduction"><h4>Region of production:</h4>Japan</div>
+
+      <div class="FirstEpDate"><h4>Frist episode date :</h4> 19 Nov 1973 </div>
+
+      <div class="FinalEpDate"><h4>Final episode date:  </h4> 14 Oct 1983</div>
+
+      <div class="Introduction"><h4>Introduction:</h4> "Strange Doctor Black Jack" is a cartoon created by Osamu Tezuka, the god of Japanese comics, in 1973. In the low tide of his life, he took this opportunity to criticise the society and was obscure and ironic. The protagonist of the work, "Black Jack", is an unaccredited surgeon. Although his medical skills are extremely excellent, he often raises huge surgical fees to patients (the basic price in the comics is usually 30 million yen). Osamu Tezuka used the contrast created by this role to vent his dissatisfaction with society, claiming that modern morality is "just a layer of vanity and gloom that covers up the facts". </div>
+
+      <div class="Character"><h4>Character:</h4> Jack (Black. ジャック) The real name is Black Man, and this is the leading actor. Unacless surgical doctor. The medical skills are excellent, but the fees are extremely high, ranging from tens of millions to tens of billions. Despite this, he often does not take a penny or only a small fee for poor patients. He wears a black coat wherever he goes, with a scalpel and other medical equipment inside, and can throw back the enemy if necessary. When he was playing with his mother on the beach in his early years, he touched the unremoved unexploded bomb left by the U.S. military stationed and exploded. As a result, his mother died after being sent to the hospital, and Black Jack was almost completely broken. Jutōtaro's treatment and a large number of skin transplants survived (there were obvious post-operative scars on his face, and the black skin on his face was never removed to commemorate the only black friend Gao Zhi who encouraged him and donated skin at that time, but died accidentally due to the government's suppression of environmental protection organisations), so he aspired to be a Doctor, and revenge for his mother's death.</div>
+      
+      </div>
+    
+    <!-- Author Anime 9 -->
+    <div class="AuthorBox JI">
+
+      <div class="AnimeLink">URL: https://m.imdb.com/title/tt10905902/</div>
+
+      <div class="AnimeName"><h4>Anime Name: </h4>Uzumaki</div>
+
+      <div class="Author"><h4>Author: </h4>Junji Ito</div>
+
+      <div class="AnimeImageContainer">
+
+        <img class="AnimeImg" src="./images/漩涡.jpg" alt="Uzumaki" />
+
+
+      </div>
+
+      <div class="Publisher"><h4>Publisher:</h4> Big Comic Spirits</div>
+
+      <div class="RegionOfProduction"><h4>Region of production:</h4>Japan</div>
+
+      <div class="Episodes"><h4>Episodes:</h4> 4 </div>
+
+      <div class="ReleaseDate"><h4>Release Date: </h4> 11 Feb 2000 </div>
+
+      <div class="Introduction"><h4>Introduction:</h4> One of the masterpieces of Japanese horror comics master Junji Ito. The protagonist of the story is a beautiful high school girl named Kirie Goshima. The story begins with her boyfriend, Hideichi Saito, who returns to the black vortex town where they live from his school in Linzhen. Xiuyi looked very haggard, because his father suddenly began to have strange behaviour. After that, all kinds of strange things began to spread to everyone in the town, everything. The curse of the vortex is all over the black vortex town, while the haggard Xiuyi has always insisted on protecting his kind and beautiful girlfriend. Tong Hui witnessed everything from beginning to end with her own eyes. When she and Xiuyi finally survived to the end and became the only normal person in the town, what did they see?</div>
+      
+      </div>
+    
+    <!-- Author Anime 10 -->
+    <div class="AuthorBox MS">
+
+      <div class="AnimeLink">URL: https://play.google.com/store/movies/details?id=kg9MIKcDdtw.P&pli=1</div>
+
+      <div class="AnimeName"><h4>Anime Name: </h4> Weathering With You</div>
+
+      <div class="Author"><h4>Author: </h4>Makoto Shinkai</div>
+
+      <div class="AnimeImageContainer">
+
+        <img class="AnimeImg" src="./images/天气之子.jpeg" alt="Weathering with you" />
+
+      </div>
+
+      <div class="Publisher"><h4>Publisher:</h4> Comix Wave Film </div>
+
+      <div class="RegionOfProduction"><h4>Region of production:</h4>Japan</div>
+
+      <div class="RunningTime"><h4>Running time:</h4>1h 54m</div>
+
+      <div class="ReleaseDate"><h4>Release Date: </h4>19 July 2019 (Japan)</div>
+
+      <div class="Introduction"><h4>Introduction:</h4> The film tells the fantasy love story between the young Fan Gao and the girl Yang Cai, who has the ability to control the weather.</div>
+
+      <div class="Character"><h4>Character: </h4> Hidetaka Morishima:
+        A high school student who leaves his remote island home to chase the light. He leaves his home on the island and moves to Tokyo to find a job at a paranormal magazine publisher. But since he joined his new job, the weather has been terrible and it rains every day.
+        <br>Yona Amano:
+        Yona seems to be able to control the weather; when she prays the rain stops, and as she closes her hands, the rain is sucked back into the sky. In a corner of the city, Hentaka and Yona meet.</div>
+
+
+    </div>
+    
+    <!-- Author Anime 11 -->
+    <div class="AuthorBox HM">
+
+      <div class="AnimeLink">URL: https://www.netflix.com/au/title/60032294?source=35</div>
+
+      <div class="AnimeName"><h4>Anime Name:</h4>My Neighbor Totoro</div>
+
+      <div class="Author"><h4>Author:</h4> Hayao Miyamizu</div>
+
+      <div class="AnimeImageContainer">
+
+        <img class="AnimeImg" src="./images/龙猫.jpg" alt="龙猫" />
+
+
+      </div>
+
+     
+      <div class="Publisher"><h4>Publisher:</h4>Toho Corporation </div>
+
+      <div class="RegionOfProduction"><h4>Region of production:</h4>Japan</div>
+
+      <div class="RunningTime"><h4>Running time:</h4>86 minutes </div>
+
+      <div class="ReleaseDate"><h4>Release Date: </h4>16 April 1988(Japan)</div>
+
+      <div class="Introduction"><h4>Introduction:</h4> The film tells the story of Caobi Dalang's wife, Caobi Yasuko, who returned to the countryside with Caobi Gaoyue and his four-year-old sister Caobimei after she was hospitalised.</div>
+
+    </div>
+    
+    <!-- Author Anime 12 -->
+    <div class="AuthorBox JI">
+
+      <div class="AnimeLink">URL:https://www.crunchyroll.com/series/G68V4NDJ6/junji-ito-collection</div>
+
+      <div class="AnimeName"><h4>Anime Name: </h4>Junji Ito Collection</div>
+
+      <div class="Author"><h4>Author: </h4>Junji Ito</div>
+
+      <div class="AnimeImageContainer">
+
+        <img class="AnimeImg" src="./images/双一.jpg.webp" alt="双一" />
+
+      </div>
+
+     
+      <div class="Publisher"><h4>Publisher:</h4> Studio Deen</div>
+
+      <div class="RegionOfProduction"><h4>Region of production:</h4>Japan</div>
+
+      <div class="Episodes"><h4>Episodes:</h4> 12 </div>
+
+      <div class="ReleaseDate"><h4>Release Date: </h4>2018(Japan)</div>
+
+      <div class="Introduction"><h4>Introduction:</h4> Shuichi is a teenager with a dark personality in the series "Shuichi" by Junji Ito. He is characterized by distinctive dark circles under his eyes, greasy hair, and a penchant for carrying nails in his mouth. He has the ability to prophesy and curse, and is very interested in mysterious things such as demons and monsters, and is arrogant and sinister.</div>
+
+
+    </div>
+    
+    <!-- Author Anime 13 -->
+    <div class="AuthorBox MS">
+
+      <div class="AnimeLink">URL: </div>
+
+      <div class="AnimeName"><h4>Anime Name: </h4> Suzume</div>
+
+      <div class="Author"><h4> Author: </h4>Makoto Shinkai</div>
+
+      <div class="AnimeImageContainer">
+
+        <img class="AnimeImg" src="./images/铃芽之旅.jpg" alt="Suzume />
+
+      </div>
+
+         <div class="Publisher"><h4>Publisher:</h4> Toho Corporation</div>
+
+      <div class="RegionOfProduction"><h4>Region of production:</h4>Japan</div>
+
+      <div class="RunningTime"><h4>Running time:</h4> 2h 2m </div>
+
+      <div class="ReleaseDate"><h4>Release Date: </h4>13 April 2023 (Australia)</div>
+
+      <div class="Introduction"><h4>Introduction:</h4> As the skies turn red and the planet trembles, Japan stands on the brink of disaster. However, a determined teenager named Suzume sets out on a mission to save her country. Able to see supernatural forces that others cannot, it's up to her to close the mysterious doors that are spreading chaos across the land. A perilous journey awaits as the fate of Japan rests on her shoulders.</div>
+      
+      </div>
+    
+
+    <!-- Author Anime 14 -->
+    <div class="AuthorBox HM">
+
+      <div class="AnimeLink">URL: https://www.netflix.com/au/title/60027106?source=35</div>
+
+      <div class="AnimeName"><h4>Anime Name: </h4>Kiki's Delivery Service</div>
+
+      <div class="Author"><h4>Author :</h4>Hayao Miyamizu</div>
+
+      <div class="AnimeImageContainer">
+
+        <img class="AnimeImg" src="./images/魔女宅急便.jpg" alt="pan filled with mushroom carbonara pasta" />
+
+      </div>
+
+      <div class="Publisher"><h4>Publisher:</h4> Studio Ghibli</div>
+
+      <div class="RegionOfProduction"><h4>Region of production:</h4>Japan</div>
+
+      <div class="RunningTime"><h4>Running time:</h4>1h 42m </div>
+
+      <div class="ReleaseDate"><h4>Release Date: </h4>July 29, 1989 (Japan)</div>
+
+      <div class="Introduction"><h4>Introduction:</h4> It tells the story of the magical girl Kiki leaving home for independent practice. The film depicts the dilemma faced by Japanese adolescent girls in the hope of independence and self-reliance.</div>
+
+    
+    </section>
+
+  </body>
+
+</html>
