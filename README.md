@@ -1,1 +1,1 @@
-https://searchbyakiss.github.io/IM-A2/index.html
+https://searchbyakiss.github.io/IM-A2-E2/index.html
