@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<!-- 
+
+  PROVIDE MEANINGFUL FEEDBACK TO THE FOLLOWING ELEMENTS:
+  1) <button> with the id of load-link on the loading page (index.html)
+  2) <div> with the id of load-throbber on the loading page (index.html)
+  3) <li> inside of the <ol> inside of the <nav> on the information page (Banana Cat.html)
+  4) <button> with the id of mode-button on the information page (Banana Cat.html)
+  5) switchModes() function - hint you can add a transition CSS property to the <body> and it will be inherited 
+     by all the elements inside, so when custom CSS variables are changed it will apply transition
+
+-->
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 
+      this file contains some CSS that removes the default HTML feedback of the elements you need to work on - please
+      leave this import as it is and don't change anything in the CSS file called feedbackReset.css
+    -->
+    <link rel="stylesheet" type="text/css" href="feedbackReset.css">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="modeSwitch.js" defer></script>
+
+    <title>Banana Cat</title>
+
+  </head>
+
+  <body>
+    <!-- The function switchModes() is declared in the file modeSwitch.js -->
+    <button onclick="switchModes()" id="mode-button">Dark Mode</button>
+
+    <header>
+      
+      <h1>Banana Cat</h1>
+      <hr />
+      <nav>
+        <ol>
+          <li><a href="#Intro">Introduction</a></li>
+          <li><a href="#Video">Video</a></li>
+          <li><a href="#references">References</a></li>
+        </ol>
+      </nav>
+      
+    </header>
+    
+    <main>
+      <section >
+        <p>
+          The extranet meme has an early surrealist and postmodernist quality to it, elements that blur the figurative nature of the joke and the meme itself, making it an abstract or even detached <a href=""><i>meme</i></a>.<a href="#cite-1"><sup>[1]</sup></a></p>
+        </p>
+      </section>
+
+      
+      <section id="Intro">
+        <h2>Introduction</h2>
+        <hr />
+        <p>
+        <img src="1.jpg" alt="Banana Cat" width="200" height="200">
+        <img src="2.jpg" alt="Banana Cat" width="300" height="200">
+        </p>
+       
+      </section>
+
+      <section id="Video">
+        <h2>Video</h2>
+        <hr />
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/NI7EQApCCTE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </section>
+
+     
+
+      <section id="references">
+        <h2>References</h2>
+        <hr />
+        <ol class="res-columns">
+          <li id="cite-1"><a href="">"https://en.wikipedia.org/wiki/Meme"</a>.</li>
+        </ol>
+      </section>
+      <!--
+        
+      -->
+      <button onclick="window.scroll(0, 0);" id="PopCatTop"><img src="pop cat.gif" style="width: 1rem;" >Top</button>
+    </main>
+   
+  </body>
+
+</html>
