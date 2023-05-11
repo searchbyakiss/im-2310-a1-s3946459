@@ -8,6 +8,7 @@ let playButton = document.getElementById("playButton");
 let stopButton = document.getElementById("stopButton");
 let muteButton = document.getElementById("muteButton");
 // the fullscreen button
+// The fullscreen button is more useful
 let fullScreenButton = document.getElementById("fullScreenButton");
 // the progress element
 let progressBar = document.getElementById("progressBar");
