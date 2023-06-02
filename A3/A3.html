@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universe</title>
+    <link rel="shortcut icon" href="A3/planet.png" type="image/x-icon">
+    <style>
+        body {
+
+            overflow: hidden;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <audio id="myAudio" autoplay loop>
+        <source src="A3/music.mp3" type="audio/mpeg">
+      </audio>
+    
+      <script>
+        window.onload = function() {
+          var audio = document.getElementById("myAudio");
+    
+          document.addEventListener("click", function() {
+            audio.play();
+          });
+    
+          audio.onended = function() {
+            console.log("Music playing");
+            audio.play(); // Loop play
+          };
+        };
+      </script>
+
+    <script type="module">
+
+        // Importing a 3D model library
+        import * as THREE from "https://cdn.skypack.dev/three@0.136.0";
+        // Importing the track control library
+        import { OrbitControls } from "https://cdn.skypack.dev/three@0.136.0/examples/jsm/controls/OrbitControls";
+        // Clear the console
+        console.clear()
+        // Creating scenes
+        let scene = new THREE.Scene()
+        // Set the scene background colour
+        scene.background = new THREE.Color(0x160016)
+
+         // Create a function to change the background color
+         function changeBackgroundColor() {
+        // Create a random color
+        let color = Math.random() * 0x0925
+        // Set the background color
+        scene.background = new THREE.Color(color)
+    }
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        }
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        // Create a camera
+        let camera = new THREE.PerspectiveCamera(60, innerWidth / innerHeight, 1, 1000)
+        // set the camera position
+        camera.position.set(0, 4, 21)
+
+        // Create a renderer
+        let renderer = new THREE.WebGLRenderer()
+        // Set the renderer size
+        renderer.setSize(innerWidth, innerHeight)
+        // Adding the renderer to the page
+        document.body.appendChild(renderer.domElement)
+        // Listening for window size change events
+        window.addEventListener("resize", event => {
+            camera.aspect = innerWidth / innerHeight
+            camera.updateProjectionMatrix()
+            renderer.setSize(innerWidth, innerHeight)
+        })
+        document.addEventListener("click", changeBackgroundColor);
+
+        // Create a controller
+        let controls = new OrbitControls(camera, renderer.domElement)
+        // Damping effect switched on
+        controls.enableDamping = true
+        // Disable Panel
+        controls.enablePan
+        // Create a global uniform
+        let gu = {
+            time: { value: 0 }
+        }
+        // Create point size arrays and move arrays
+        let sizes = []
+        let shift = []
+
+        // Creating a move function
+        let pushShift = () => {
+            shift.push(
+                Math.random() * Math.PI,
+                Math.random() * Math.PI * 2,
+                (Math.random() * 0.9 + 0.1) * Math.PI * 0.1,
+                Math.random() * 0.9 + 0.1
+            )
+        }
+
+        // Create an array of vertices of points (the middle sphere)
+        // Create an array pts of length 50,000 and y iterate through the array and manipulate each element with the Array.prototype.map() method
+        let pts = new Array(50000).fill().map(p => {
+            // A random size is added to the sizes array in each traversal
+            sizes.push(Math.random() * 1.5 + 0.5)
+            // Call the pushShift() function to add position information and return a THREE.Vector object with a random orientation
+            pushShift()
+            return new THREE.Vector3().randomDirection().multiplyScalar(Math.random() * 0.5 + 9.5)
+            //
+        })
+
+        // Add more dots (next to the surrounding ones)
+        // Generate 100,000 points in a loop first
+        // Generate a random number rand in each loop, then a random radius radius
+
+        for (let i = 0; i < 100000; i++) {
+            let r = 10, R = 40;
+            let rand = Math.pow(Math.random(), 1.5);
+            let radius = Math.sqrt(R * R * rand + (1 - rand) * r * r);
+            // Use new THREE.Vector3().setFromCylindricalCoords() to generate a point
+            pts.push(new THREE.Vector3().setFromCylindricalCoords(radius, Math.random() * 2 * Math.PI, (Math.random() - 0.5) * 2));
+            sizes.push(Math.random() * 1.5 + 0.5);
+            pushShift();
+        }
+        // Generate a point g and add the point size and position information to the sizes and shift arrays
+        let g = new THREE.BufferGeometry().setFromPoints(pts)
+        // A buffered geometry is created and the sizes and shift properties are set
+        // Note that the F here is capitalized Float32BufferAttribute
+        g.setAttribute("sizes", new THREE.Float32BufferAttribute(sizes, 1))
+        g.setAttribute("shift", new THREE.Float32BufferAttribute(shift, 4))
+        // Creating point materials
+        let m = new THREE.PointsMaterial({
+            // Indicates the size of a point
+            size: 0.125,
+            // Set material to transparent
+            transparent: true,
+            // Indicates that the depth test is disabled so that points can be stacked
+            depthTest: false,
+            // Using the wig blending mode
+            blending: THREE.AdditiveBlending,
+            // Modify the colorizer before the material is compiled, in this case it is used to replace the vertex shader and slice shader, adding uniform
+            // and attribute to the chicken custom colour and movement
+            onBeforeCompile: shader => {
+                shader.uniforms.time = gu.time
+                // First, it sets a uniform variable time for the shader, which is defined in the point material and is used to track time
+                // Then it defines two attribute variables, sizes and shift, which are defined in the buffer geometry and are used to control the size and movement of the points
+                // Finally the replace method is used to replace the code in the vertex shader
+                shader.vertexShader = `
+                uniform float time;
+                attribute float sizes;
+                attribute vec4 shift;
+                varying vec3 vColor;
+                ${shader.vertexShader}
+                `
+                    // Note the above ` Don't leave out
+                    // Using replace to replace code in shaders
+                    // Size of update points
+                    .replace(
+                        `gl_PointSize = size;`,
+                        `gl_PointSize = size * sizes;`
+                    )
+                    // Update the colour of the points
+                    .replace(
+                        `#include <color_vertex>`,
+                        `#include <color_vertex>
+                    float d = length(abs(position)/vec3(40.,10.,40));
+                    d=clamp(d,0.,1.);
+                    vColor = mix(vec3(227.,155.,0.),vec3(100.,50.,255.),d)/255.;`
+                    )
+                    // Remember to add the semicolon
+                    // Movement of update points
+                    .replace(
+                        `#include <begin_vertex>`,
+                        `#include <begin_vertex>
+                            float t = time;
+                            float moveT = mod(shift.x + shift.z * t,PI2);
+                            float moveS = mod(shift.y + shift.z * t,PI2);
+                            transformed += vec3(cos(moveS) * sin(moveT),cos(moveT),sin(moveS)*sin(moveT)) * shift.w;
+                            `
+                    )
+                    
+                // Modify the tessellation shader to make the edges of points more rounded
+
+                // First, define a varying variable vColor, which is defined in the vertex shader and is used to pass the colour of the point to the fragment shader
+                // Then use the replace method to replace the fragment shader code
+                shader.fragmentShader = `
+                    varying vec3 vColor;
+                    ${shader.fragmentShader}
+                `.replace(
+                    `#include <clipping_planes_fragment>`,
+                    `#include <clipping_planes_fragment>
+                        float d = length(gl_PointCoord.xy - 0.5);
+                    `
+                ).replace(
+                    // Remember to add spaces
+                    `vec4 diffuseColor = vec4( diffuse, opacity );`,
+                    `vec4 diffuseColor = vec4( vColor, smoothstep(0.5, 0.1, d)/* * 0.5+0.5*/);`
+                );
+            }
+
+        })
+        // -------------------------------------------------------------
+        // Create a point cloud and add it to the scene and set up a rendering loop
+        let p = new THREE.Points(g, m)
+        // The rotation sequence is "ZYX".
+        p.rotation.order = "ZYX"
+        // Swivel angle 0.2
+        p.rotation.z = 0.2
+        // Adding objects (p) to the scene
+        scene.add(p)
+        // Create a clock object clock
+        let clock = new THREE.Clock()
+        // Rendering loop in which the controller is updated, the rotation angle of p is updated and the time is updated in each loop
+        renderer.setAnimationLoop(() => {
+            // Update controller
+            controls.update()
+            // Get the elapsed time (t) of the clock object (clock) and multiply it by 0.5
+            // Turn off the clock first
+            let t = clock.getElapsedTime() * 0.5
+            // Set gu.time.value to t*Math.PI
+            gu.time.value = t * Math.PI
+            // Set the rotation angle y of the object (p) to t*0.05
+            p.rotation.y = t * 0.05
+            // Rendering scenes and cameras
+            renderer.render(scene, camera)
+        })
+        
+      
+    </script>
+</body>
+
+</html>
